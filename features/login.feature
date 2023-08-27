@@ -1,12 +1,50 @@
-Feature: The Internet Guinea Pig Website
+Feature: Test flow login and add product at "kasirAja"
 
-  Scenario Outline: As a user, I can log into the secure area
+  Background: 
+    Given i am on the login page
 
-    Given I am on the login page
-    When I login with <username> and <password>
-    Then I should see a flash message saying <message>
+  Scenario: User can't login using empty password
+    When i input email as "<email>" and password as "<password>"
+    And i click on button login
+    Then i must remain on login page displaying a message '<errorMessageLogin>'
+
+    Examples: 
+      | email           | password | errorMessageLogin                  |
+      | eka@gmail.com   |          | "Password" is not allowed to be empty |
+
+  Scenario: User can login using valid data
+    When i input email as "<email>" and password as "<password>"
+    And i click on button login
+    Then i must navigate to dashboard page
+
+    Examples: 
+      | email         | password      | 
+      | eka@gmail.com | eka           | 
+
+  Scenario: User can add product with valid input
+    Given i am on the dashboard page
+    And i click on product menu
+    And i click on button tambah
+    And i input name as "<nama>" and hargaBeli as "<hargaBeli>" and hargaJual as "<hargaJual>" and stok as "<stok>"
+    And i click kategori
+    And i click kategori umum
+    And i click button simpan
+    Then i see a successful message
 
     Examples:
-      | username | password             | message                        |
-      | tomsmith | SuperSecretPassword! | You logged into a secure area! |
-      | foobar   | barfoo               | Your username is invalid!      |
+     | nama | hargaBeli    | hargaJual    | stok  |
+     | eka  |  1000        | 10000        | 100   |
+
+  Scenario: User can't add product with name field empty 
+    Given i am on the dashboard page
+    And i click on product menu
+    And i click on button tambah
+    And i input name as "<nama>" and hargaBeli as "<hargaBeli>" and hargaJual as "<hargaJual>" and stok as "<stok>"
+    And i click kategori
+    And i click kategori umum
+    And i click button simpan
+    Then i see displaying a error message '<errorMessage>'
+
+    Examples:
+     | nama | hargaBeli    | hargaJual    | stok  | errorMessage |
+     |      |  1000        | 10000        | 100   | "name" is not allowed to be empty |
