@@ -16,5 +16,5 @@
 - **Video Result**      : https://drive.google.com/file/d/1q_d2cKpzaZcwpO1R0W912TPv86SJAG1X/view?usp=drive_link
 
 - **Source** :
-https://webdriver.io/docs/gettingstarted
-https://webdriver.io/docs/wdio-cucumberjs-json-reporter
+- https://webdriver.io/docs/gettingstarted
+- https://webdriver.io/docs/wdio-cucumberjs-json-reporter
