@@ -10,7 +10,7 @@ Feature: Test flow login and add product at "kasirAja"
 
     Examples: 
       | email           | password | errorMessageLogin                  |
-      | eka@gmail.com   |          | "Password" is not allowed to be empty |
+      | eka@gmail.com   |          | "password" is not allowed to be empty |
 
   Scenario: User can login using valid data
     When i input email as "<email>" and password as "<password>"
