@@ -13,7 +13,7 @@
 =========================================================
 - **Test Case**         : https://docs.google.com/spreadsheets/d/1Q-vdVrDYRPzVhuvmn60B2h3QJy-tfWsFO3u3IEuji7k/edit#gid=1514566529
 - **Git Repository**    : https://github.com/galangekwyn/sanber-47-wdio.git
-- **Video Result**      : x
+- **Video Result**      : https://drive.google.com/file/d/1q_d2cKpzaZcwpO1R0W912TPv86SJAG1X/view?usp=drive_link
 
 - **Source** :
 https://webdriver.io/docs/gettingstarted
